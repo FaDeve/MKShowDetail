@@ -24,6 +24,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doH-SK-EPl" userLabel="子控件内容View" customClass="UIScrollView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="0.9341458270424291" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="2Dg-I5-0tQ"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rph-qq-qgC" userLabel="头部视图">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>

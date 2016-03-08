@@ -9,7 +9,7 @@
 #import "XZBaseViewController.h"
 #import "XZCustomViewController.h"
 
-@interface XZBaseViewController ()
+@interface XZBaseViewController ()<UIScrollViewDelegate>
 /**
  *  标题内容
  */
@@ -63,8 +63,8 @@
     // 设置子控制器
     [self setUpChildControlller];
     
-    // 设置tabBar
-    [self setUpTabBar];
+    // 设置titleBar
+    [self setupTitleBar];
 }
 
 // 设置导航条
@@ -120,7 +120,7 @@
 }
 
 // 设置tabBar
-- (void)setUpTabBar
+- (void)setupTitleBar
 {
     // 遍历子控制器
     
@@ -201,5 +201,13 @@
         childV.frame = CGRectMake(btnX, btnY, btnW, btnH);
         
     }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    NSUInteger page = scrollView.contentOffset.x / screenSize.width;
+    NSLog(@"page===>%zd",page);
+    UIButton *btn = _titleBar.subviews[page];
+    [self btnClick:btn];
 }
 @end

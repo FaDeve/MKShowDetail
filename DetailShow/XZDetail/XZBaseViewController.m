@@ -8,6 +8,7 @@
 
 #import "XZBaseViewController.h"
 #import "XZCustomViewController.h"
+#import "XZCustomTableViewController.h"
 
 @interface XZBaseViewController ()<UIScrollViewDelegate>
 /**
@@ -59,12 +60,21 @@
     [super viewWillAppear:animated];
     
     [self setUpNav];
+
+}
+
+-(void)setIcon:(UIImage *)iconImage card:(UIImage *)cardImage shopName:(NSString *)name withControllers:(NSArray *)vcs {
+   
+    self.iconView.image = iconImage;
+    
+    self.cardView.image = cardImage;
+    self.nameLabel.text = name;
     
     // 设置子控制器
-    [self setUpChildControlller];
+    [self setUpChildControlllerWithControllers:vcs];
     
     // 设置titleBar
-    [self setupTitleBar];
+    [self setupTitleBarWithControllers:vcs];
 }
 
 // 设置导航条
@@ -91,16 +101,12 @@
 }
 
 // 设置子控制器
-- (void)setUpChildControlller
+- (void)setUpChildControlllerWithControllers:(NSArray *)vcs
 {
     CGSize size = [UIScreen mainScreen].bounds.size;
     NSInteger index = 0;
     CGRect frame = [UIScreen mainScreen].bounds;
-    for (XZCustomViewController *personChildVc in self.childViewControllers) {
-
-        self.iconView.image = self.iconImage;
-        
-        self.cardView.image = self.cardImage;
+    for (XZCustomTableViewController *personChildVc in vcs) {
         
         // 传递tabBar，用来判断点击了哪个按钮
         personChildVc.titleBar = _titleBar;
@@ -120,11 +126,11 @@
 }
 
 // 设置tabBar
-- (void)setupTitleBar
+- (void)setupTitleBarWithControllers:(NSArray *)vcs
 {
     // 遍历子控制器
     
-    for (UIViewController *childVc in self.childViewControllers) {
+    for (UIViewController *childVc in vcs) {
         
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         
@@ -173,7 +179,11 @@
     
     
     // 设置tableView的滚动区域
-    vc.tableView.contentOffset = lastVcView.contentOffset;
+    if (lastVcView.contentOffset.y>-108) {
+        vc.tableView.contentOffset = CGPointMake(0, -108);
+    }else{
+        vc.tableView.contentOffset = lastVcView.contentOffset;
+    }
 }
 
 - (void)viewDidLayoutSubviews

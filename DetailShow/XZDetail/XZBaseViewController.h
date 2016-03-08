@@ -10,9 +10,5 @@
 
 @interface XZBaseViewController : UIViewController
 
-// 头像控件
-@property (strong, nonatomic)  UIImage *iconImage;
-
-// 背景图片
-@property (strong, nonatomic)  UIImage *cardImage;
+- (void)setIcon:(UIImage *)iconImage card:(UIImage *)cardImage shopName:(NSString *)name withControllers:(NSArray *)vcs;
 @end

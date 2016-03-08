@@ -20,9 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.cardImage = [UIImage imageNamed:@"bgImage.gif"];
-    self.iconImage = [UIImage imageNamed:@"icon.jpg"];
-    
+//    self.cardImage = [UIImage imageNamed:@"bgImage.gif"];
+//    self.iconImage = [UIImage imageNamed:@"icon.jpg"];
     // 设置导航条标题
     self.title = @"商户详情";
     OneViewController *oneVc = [OneViewController new];
@@ -38,6 +37,8 @@
     threeVc.title = @"three";
     [self addChildViewController:threeVc];
 
+    [self setIcon:[UIImage imageNamed:@"bgImage.gif"] card:[UIImage imageNamed:@"icon.jpg"] shopName:@"小争测试" withControllers:self.childViewControllers];
+    
 }
 
 @end

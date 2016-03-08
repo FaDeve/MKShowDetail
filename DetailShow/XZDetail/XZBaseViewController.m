@@ -119,10 +119,11 @@
         frame.origin.x = index *size.width;
         personChildVc.view.frame = frame;
         [_contentView addSubview:personChildVc.view];
+        [self addChildViewController:personChildVc];
         index++;
     }
     
-    _contentView.contentSize = CGSizeMake(self.childViewControllers.count * size.width, size.height);
+    _contentView.contentSize = CGSizeMake(vcs.count * size.width, size.height);
 }
 
 // 设置tabBar
@@ -164,7 +165,8 @@
     }
 
     // 上次选中的视图
-    UITableView *lastVcView = (UITableView *)[self.childViewControllers[_selectedBtn.tag] view];
+    XZCustomViewController *lastVc = self.childViewControllers[_selectedBtn.tag];
+    UITableView *lastVcView = lastVc.tableView;
 
     
     // 选中按钮

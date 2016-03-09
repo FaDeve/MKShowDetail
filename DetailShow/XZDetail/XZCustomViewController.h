@@ -9,9 +9,23 @@
 #import <UIKit/UIKit.h>
 #import "XZTableView.h"
 
+/**
+ *  背景高度
+ */
+static const CGFloat kHeadViewH = 200;
+/**
+ *  没有背景高度
+ */
+static const CGFloat kHeadViewMinH = 64;
+/**
+ *  标题栏高度
+ */
+static const CGFloat kTitleBarH = 44;
+
+
 @interface XZCustomViewController : UIViewController
 /**
- *  给继承者使用的
+ *  给继承者使用的: tag:1024
  */
 @property (nonatomic, strong) XZTableView *tableView;
 

@@ -33,7 +33,7 @@
     }
     
     
-    cell.textLabel.text = [NSString stringWithFormat:@"123123123%ld",indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"继承自XZCustomTableViewController%ld",indexPath.row];
     
     return cell;
 }

@@ -8,13 +8,20 @@
 
 #import "TwoViewController.h"
 
+@interface TwoViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@end
 @implementation TwoViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSLog(@"%s",__func__);
+    self.tableView.frame = self.view.bounds;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 20;
@@ -33,7 +40,7 @@
     }
     
     
-    cell.textLabel.text = [NSString stringWithFormat:@"22222222%ld",indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"XZCustomViewController一个tableView%ld",indexPath.row];
     
     return cell;
 }

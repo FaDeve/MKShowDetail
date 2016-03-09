@@ -59,7 +59,7 @@
 {
     [super viewWillAppear:animated];
     
-    [self setUpNav];
+    
 
 }
 
@@ -69,7 +69,7 @@
     
     self.cardView.image = cardImage;
     self.nameLabel.text = name;
-    
+    [self setUpNav];
     // 设置子控制器
     [self setUpChildControlllerWithControllers:vcs];
     
@@ -93,7 +93,7 @@
     
     label.text = self.title;
     
-    [label setTextColor:[UIColor colorWithWhite:1 alpha:0]];
+    [label setTextColor:[UIColor colorWithWhite:0 alpha:0]];
     
     [label sizeToFit];
     

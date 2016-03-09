@@ -10,5 +10,13 @@
 
 @interface XZBaseViewController : UIViewController
 
+/**
+ *  设置显示效果
+ *
+ *  @param iconImage 头像
+ *  @param cardImage 背景图片
+ *  @param name      标题
+ *  @param vcs       所要创建的控制器
+ */
 - (void)setIcon:(UIImage *)iconImage card:(UIImage *)cardImage shopName:(NSString *)name withControllers:(NSArray *)vcs;
 @end

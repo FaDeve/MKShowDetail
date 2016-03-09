@@ -53,6 +53,15 @@
     // 不自动添加额外滚动区域
     self.automaticallyAdjustsScrollViewInsets = NO;
     _contentView.pagingEnabled = YES;
+    
+    // 接收按钮点击通知
+    [[NSNotificationCenter defaultCenter] addObserverForName:XZClickBtnNote object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        
+        UIButton *clickBtnObjc = note.userInfo[XZClickBtnObjcKey];
+        
+        [self btnClick:clickBtnObjc];
+        
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated

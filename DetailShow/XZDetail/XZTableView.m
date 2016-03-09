@@ -8,9 +8,6 @@
 
 #import "XZTableView.h"
 
-#define XZClickBtnObjcKey @"clickBtnObjc"
-#define XZClickBtnNote @"clickBtn"
-
 @implementation XZTableView
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

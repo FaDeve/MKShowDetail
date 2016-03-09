@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#define XZClickBtnObjcKey @"clickBtnObjc"
+#define XZClickBtnNote @"clickBtn"
+
 @interface XZTableView : UITableView
 @property (nonatomic, weak)   UIView *tabBar;
 @end

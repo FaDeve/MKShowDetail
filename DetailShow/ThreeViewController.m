@@ -9,7 +9,6 @@
 #import "ThreeViewController.h"
 
 
-static const CGFloat kTitleBarHeight = 44;
 static NSString *const keyPath = @"contentOffset";
 
 #define ScreenSize [UIScreen mainScreen].bounds.size
@@ -80,7 +79,7 @@ static NSString *const keyPath = @"contentOffset";
     
     self.leftTableView = ({
         
-        UITableView *leftTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenSize.width /3, ScreenSize.height - kTitleBarHeight) style:UITableViewStylePlain];
+        UITableView *leftTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenSize.width /3, ScreenSize.height - kTitleBarH) style:UITableViewStylePlain];
         leftTableView.delegate = self;
         leftTableView.dataSource = self;
         [self.view addSubview:leftTableView];
@@ -94,7 +93,7 @@ static NSString *const keyPath = @"contentOffset";
  */
 - (void)setupRightTableView {
 
-    self.tableView.frame = CGRectMake(ScreenSize.width/3, 0, ScreenSize.width *2/3, ScreenSize.height - kTitleBarHeight);
+    self.tableView.frame = CGRectMake(ScreenSize.width/3, 0, ScreenSize.width *2/3, ScreenSize.height - kTitleBarH);
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 }
@@ -103,7 +102,7 @@ static NSString *const keyPath = @"contentOffset";
  *   创建底部工具栏
  */
 -(void)setupTabBar {
-    UIView *tabBarView = [[UIView alloc]initWithFrame:CGRectMake(0, ScreenSize.height - kTitleBarHeight, ScreenSize.width, kTitleBarHeight)];
+    UIView *tabBarView = [[UIView alloc]initWithFrame:CGRectMake(0, ScreenSize.height - kTitleBarH, ScreenSize.width, kTitleBarH)];
     tabBarView.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:tabBarView];
 }

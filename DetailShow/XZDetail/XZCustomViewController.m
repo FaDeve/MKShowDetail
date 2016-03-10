@@ -32,7 +32,9 @@
 
 -(XZTableView *)tableView {
     if (!_tableView) {
-        _tableView = [[XZTableView alloc] init];
+        _tableView = [[XZTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+        _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
+        _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
         _tableView.delegate = self;
         _tableView.tag = 1024;
         [self.view addSubview:_tableView];

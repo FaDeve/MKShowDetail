@@ -64,14 +64,6 @@
     }];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    
-
-}
-
 -(void)setIcon:(UIImage *)iconImage card:(UIImage *)cardImage shopName:(NSString *)name withControllers:(NSArray *)vcs {
    
     self.iconView.image = iconImage;
@@ -227,7 +219,6 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     NSUInteger page = scrollView.contentOffset.x / screenSize.width;
-    NSLog(@"page===>%zd",page);
     UIButton *btn = _titleBar.subviews[page];
     [self btnClick:btn];
 }

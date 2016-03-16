@@ -69,6 +69,8 @@
         
         // 设置导航条背景图片
         [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithWhite:1 alpha:alpha]] forBarMetrics:UIBarMetricsDefault];
+    }else {
+        NSLog(@"其他tableView%s",__FUNCTION__);
     }
 }
 

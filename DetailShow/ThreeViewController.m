@@ -16,6 +16,11 @@ static NSString *const keyPath = @"contentOffset";
 
 @interface ThreeViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong,nonnull) UITableView *leftTableView;
+
+
+    // 数据源
+@property (nonatomic, strong, nonnull) NSMutableArray *sections;
+@property (nonatomic, strong, nonnull) NSMutableArray *details;
 @end
 
 @implementation ThreeViewController
@@ -34,7 +39,6 @@ static NSString *const keyPath = @"contentOffset";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%s",__func__);
     
     // 创建左边一个tableView 右边一个tableView 然后左右相互判断
     // 创建左边的tableView
@@ -113,12 +117,18 @@ static NSString *const keyPath = @"contentOffset";
 }
 
 #pragma mark - tableView delegate&dataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if (tableView.tag == 1024) {
+        return self.sections.count;
+    }
+    return 1;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (tableView.tag == 1024) {
-        return 30;
+        return self.details.count;
     }
-    return 10;
+    return self.sections.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -135,7 +145,7 @@ static NSString *const keyPath = @"contentOffset";
         }
         
         
-        cell.textLabel.text = [NSString stringWithFormat:@"XZCustomViewController两个tableView%ld",indexPath.row];
+        cell.textLabel.text = self.details[indexPath.row];
         
         return cell;
     }else {
@@ -150,10 +160,47 @@ static NSString *const keyPath = @"contentOffset";
         }
         
         
-        cell.textLabel.text = [NSString stringWithFormat:@"标题%ld",indexPath.row];
+        cell.textLabel.text = self.sections[indexPath.row];
         
         return cell;
     }
     
+}
+-(NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (tableView.tag == 1024) {
+        return [NSString stringWithFormat:@"section %zd",section];
+    }else {
+        return nil;
+    }
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(tableView.tag == 1024){
+        
+    }else {
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath.row] atScrollPosition:0 animated:NO];
+    }
+}
+
+#pragma mark - lazy
+-(NSMutableArray *)sections {
+    if (!_sections) {
+        NSMutableArray *temp = [NSMutableArray array];
+        for (NSInteger i = 0; i< 10; i++) {
+            [temp addObject:[NSString stringWithFormat:@"标题%zd",i]];
+        }
+        _sections = temp;
+    }
+    return _sections;
+}
+
+-(NSMutableArray *)details {
+    if (!_details) {
+        NSMutableArray *temp = [NSMutableArray array];
+        for (NSInteger i = 0; i< 5; i++) {
+            [temp addObject:[NSString stringWithFormat:@"详细内容%zd",i]];
+        }
+        _details = temp;
+    }
+    return _details;
 }
 @end

@@ -143,8 +143,6 @@ static NSString *const keyPath = @"contentOffset";
                     ];
             cell.backgroundColor = [UIColor redColor];
         }
-        
-        
         cell.textLabel.text = self.details[indexPath.row];
         
         return cell;
@@ -158,7 +156,6 @@ static NSString *const keyPath = @"contentOffset";
                     ];
             cell.backgroundColor = [UIColor blueColor];
         }
-        
         
         cell.textLabel.text = self.sections[indexPath.row];
         
@@ -177,6 +174,9 @@ static NSString *const keyPath = @"contentOffset";
     if(tableView.tag == 1024){
         
     }else {
+        /**
+         *  点击的时候会出现混乱
+         */
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath.row] atScrollPosition:0 animated:NO];
     }
 }

@@ -26,6 +26,11 @@ static NSString *const keyPath = @"contentOffset";
     [self.tableView removeObserver:self forKeyPath:keyPath];
 }
 
+/**
+ *  目前还存在问题:
+ 如果左边tableView执行选择代理后右边tableView滚动到相应的位置会导致Nav滚动效果
+ 如果判断左边tableView的事件,并且在左边tableView点击时过滤掉效果,右边tableView的contentView会显示不正确.
+ */
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -24,6 +24,7 @@
 //    self.iconImage = [UIImage imageNamed:@"icon.jpg"];
     // 设置导航条标题
     self.title = @"商户详情";
+    self.view.backgroundColor = [UIColor whiteColor];
     
     OneViewController *oneVc = [OneViewController new];
     oneVc.title = @"one";

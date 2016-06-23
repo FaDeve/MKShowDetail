@@ -8,11 +8,18 @@
 
 #import "OneViewController.h"
 
+@interface OneViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@end
+
 @implementation OneViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSLog(@"%s",__func__);
+    self.tableView.frame = self.view.bounds;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

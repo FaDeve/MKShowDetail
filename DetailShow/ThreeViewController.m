@@ -28,7 +28,6 @@ static NSString *const keyPath = @"contentOffset";
 #pragma mark - life cycle
 - (void)dealloc {
     [self.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    [self.tableView removeObserver:self forKeyPath:keyPath];
 }
 
 /**
@@ -47,37 +46,6 @@ static NSString *const keyPath = @"contentOffset";
     [self setupRightTableView];
     
     [self setupTabBar];
-    
-    [self.tableView addObserver:self forKeyPath:keyPath options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:nil];
-}
-
-#pragma mark - 监听tableView的contentOffset
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
-    
-    CGPoint newP = [change[@"new"] CGPointValue];
-    CGPoint oldP = [change[@"old"] CGPointValue];
-
-    if (newP.y != oldP.y) {
-        
-        CGFloat offsetY = newP.y;
-        
-        // 获取偏移量差值
-        CGFloat delta = offsetY - (-(kHeadViewH + kTitleBarH));
-        
-        CGFloat headH = kHeadViewH - delta;
-        
-        if (headH < kHeadViewMinH) {
-            headH = kHeadViewMinH;
-        }
-        
-        _leftTableView.contentInset = UIEdgeInsetsMake(headH + kTitleBarH, 0, 0, 0);
-        
-        if (newP.y>-(kTitleBarH + kHeadViewMinH)) {
-            _leftTableView.contentOffset = CGPointMake(0, -kTitleBarH - kHeadViewMinH);
-        }else{
-            _leftTableView.contentOffset = self.tableView.contentOffset;
-        }
-    }
 }
 
 #pragma mark - 创建视图
@@ -172,14 +140,98 @@ static NSString *const keyPath = @"contentOffset";
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if(tableView.tag == 1024){
-        
+        return;
     }else {
-        /**
-         *  点击的时候会出现混乱
-         */
-        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath.row] atScrollPosition:0 animated:NO];
+        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath.row] animated:YES scrollPosition:UITableViewScrollPositionTop];
     }
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (tableView.tag == 1024) {
+        return 25;
+    }
+    return CGFLOAT_MIN;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return CGFLOAT_MIN;
+}
+#pragma mark - 滑动处理
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    [self selectLeftTableViewWithScrollView:scrollView];
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+    // 推拽将要结束的时候手动调一下这个方法
+    [self scrollViewDidEndDecelerating:scrollView];
+}
+- (void)selectLeftTableViewWithScrollView:(UIScrollView *)scrollView {
+    // 如果现在滑动的是左边的tableView，不做任何处理
+    if ((UITableView *)scrollView == self.leftTableView) return;
+    
+    // 滚动右边tableView，设置选中左边的tableView某一行。indexPathsForVisibleRows属性返回屏幕上可见的cell的indexPath数组，利用这个属性就可以找到目前所在的分区
+    NSInteger row = [self MinCurrentSection:self.tableView];
+    
+    [self.leftTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
+}
+
+// override
+CGFloat olderTop = 0;
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (scrollView.tag != 1024) {
+        return;
+    }
+    // 获取当前偏移量
+    CGFloat offsetY = scrollView.contentOffset.y;
+    
+    // 获取偏移量差值
+    CGFloat delta = offsetY + (kHeadViewH+ kTitleBarH) ;
+    
+    CGFloat headH = kHeadViewH - delta;
+    
+    if (headH < kHeadViewMinH) {
+        headH = kHeadViewMinH;
+    }
+    
+    self.headHCons.constant = headH;
+    
+    CGFloat top = headH +kTitleBarH;
+    if (top>=kTitleBarH +kHeadViewH) {
+        top = kTitleBarH + kHeadViewH;
+    }
+    if (olderTop !=top) {
+        self.tableView.contentInset = UIEdgeInsetsMake(top, 0, 0, 0);
+        self.leftTableView.contentInset = UIEdgeInsetsMake(top, 0, 0, 0);
+        olderTop = top;
+    }
+    // 计算透明度，刚好拖动200 - 64 136，透明度为1
+    
+    CGFloat alpha = delta / (kHeadViewH - kHeadViewMinH);
+    if (self.changeNavigationBar) {
+        self.changeNavigationBar(alpha);
+    }
+}
+
+
+#pragma mark - private
+//获取当前collectionView可见内容中最小的段值
+-(NSInteger)MinCurrentSection:(UITableView *)view
+{
+    NSArray *visibleSections = [self.tableView.indexPathsForVisibleRows valueForKey:@"section"];
+    NSInteger min = [[visibleSections valueForKeyPath:@"@min.intValue"] integerValue];
+    //是不是最后一个section
+    NSInteger temp = min;
+    if (min +1<= self.sections.count-1) {
+        CGRect sectionHeaderRect = [self.tableView rectForHeaderInSection:min +1];
+        CGRect rect =[self.tableView convertRect:sectionHeaderRect toView:[UIApplication sharedApplication].keyWindow];
+        if (rect.origin.y<=kHeadViewMinH + kTitleBarH) {
+            temp = min +1;
+        }
+    }
+    return temp;
+}
+
 
 #pragma mark - lazy
 -(NSMutableArray *)sections {

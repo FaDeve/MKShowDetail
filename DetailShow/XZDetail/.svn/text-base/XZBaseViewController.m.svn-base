@@ -1,0 +1,350 @@
+//
+//  XZBaseViewController.m
+//  DetailShow
+//
+//  Created by 微指 on 16/3/7.
+//  Copyright © 2016年 CityNight. All rights reserved.
+//
+
+#import "UIImage+Extension.h"
+#import <UIImageView+LBBlurredImage.h>
+#import "UIImageView+LBBlurredImage.h"
+#import "UIImageView+WebCache.h"
+#import "UIView+Layer.h"
+//#import "WZShopInfoItem.h"
+#import "XZBaseViewController.h"
+#import "XZCustomTableViewController.h"
+#import "XZCustomViewController.h"
+//#import "XZShopDetailStarView.h"
+
+//#import "RPPBroadcastDetailViewController.h"
+//#import "RPPBroadcastHelper.h"
+//#import "RPPShopDetailBroadcastView.h"
+//#import "ShowWebViewController.h"
+//#import "ZADeliveyWebView.h"
+
+@interface XZBaseViewController () <UIScrollViewDelegate>
+/**
+ *  标题内容
+ */
+@property (nonatomic, weak) UILabel *titleLabel;
+/**
+ *  选择栏
+ */
+@property (weak, nonatomic) IBOutlet UIView *titleBar;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *contentView;
+
+@property (nonatomic, weak) UIButton *selectedBtn;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headViewCons;
+
+// 头像控件
+@property (weak, nonatomic) IBOutlet UIImageView *iconView;
+
+// 明信片控件
+@property (weak, nonatomic) IBOutlet UIImageView *cardView;
+/**
+ *  商户名称
+ */
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+/**
+ *  评分
+ */
+@property (weak, nonatomic) IBOutlet UIView *startView;
+/**
+ *  广告位
+ */
+@property (weak, nonatomic) IBOutlet UIView *adView;
+/**
+ *  titleBar中的下划线
+ */
+@property (weak, nonatomic) IBOutlet UIView *lineView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lineViewConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lineViewConstraintWidth;
+/** 百秒送image */
+@property (weak, nonatomic) IBOutlet UIImageView *bmsImageView;
+
+/** 防止重复点击 */
+@property (assign, nonatomic) BOOL isTapAction;
+
+@end
+
+@implementation XZBaseViewController
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:@"XZBaseViewController" bundle:nibBundleOrNil]) {
+    }
+    return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:NO];
+    _isTapAction = YES;
+    [self.navigationController.navigationBar setHidden:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:NO];
+    [self.navigationController.navigationBar setHidden:NO];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    _isTapAction = YES;
+    [self.navigationController.navigationBar setHidden:YES];
+    self.navigationView.bgImageView.image =
+        [UIImage imageWithColor:[UIColor colorWithWhite:1 alpha:0]];
+
+    self.navigationView.layer.shadowOpacity = 0.2;
+    self.navigationView.layer.shadowOffset = CGSizeMake(0, 1);
+    self.navigationView.titleLabel.alpha = 0.0f;
+
+    // 不自动添加额外滚动区域
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    _contentView.pagingEnabled = YES;
+
+    // 头像
+    [self.iconView circleWithColor:[UIColor whiteColor] borderWidth:2];
+
+    //给百秒送图片 添加一个tap手势
+    UITapGestureRecognizer *tap =
+        [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                action:@selector(tapBMSImageViewAction:)];
+    tap.numberOfTapsRequired = 1;
+    [_bmsImageView addGestureRecognizer:tap];
+
+    // 接收按钮点击通知
+    __weak typeof(self) weakSelf = self;
+    [[NSNotificationCenter defaultCenter]
+        addObserverForName:XZClickBtnNote
+                    object:nil
+                     queue:[NSOperationQueue mainQueue]
+                usingBlock:^(NSNotification *note) {
+                    __strong __typeof(weakSelf) strongSelf = weakSelf;
+                    if (strongSelf) {
+                        UIButton *clickBtnObjc = note.userInfo[XZClickBtnObjcKey];
+                        [strongSelf btnClick:clickBtnObjc];
+                    }
+                }];
+}
+
+#pragma mark-- 百秒送图片点击手势
+- (void)tapBMSImageViewAction:(UITapGestureRecognizer *)tap {
+//    if (_isTapAction) {
+//        _isTapAction = NO;
+//        NSString *url =
+//            [NSString stringWithFormat:@"http://%@/pages/indexpage/index1.html", URL_SERVER];
+//        [ShowWebViewController statrWithUrl:url withNamtTitle:@"百秒送 首单免费" withOwer:self];
+//    }
+}
+
+//- (void)configUIWithShopInfo:(WZShopInfoItem *)shopinfo
+//            broadcastContent:(NSString *)broadcast_content
+//             withControllers:(NSArray *)vcs {
+//
+//    // 设置评分
+//    XZShopDetailStarView *evaluateView =
+//        [[XZShopDetailStarView alloc] initWithFrame:CGRectMake(0, 0, 68, 12)];
+//    evaluateView.rating = [shopinfo.evaluate floatValue];
+//    [self.startView addSubview:evaluateView];
+//
+//    // 设置广告位
+//    [self setupBroadcastWithshopInfo:shopinfo broadcastContent:broadcast_content];
+//
+//    // 设置头像
+//    [self.iconView sd_setImageWithURL:[NSURL URLWithString:shopinfo.main_img]
+//                     placeholderImage:[UIImage imageNamed:@"icon.jpg"]];
+//
+//    // 设置背景图[UIImage imageNamed:@"bgImage.gif"]
+//    [self.cardView sd_setImageWithURL:[NSURL URLWithString:shopinfo.main_img]
+//                     placeholderImage:[UIImage imageNamed:@"icon.jpg"]];
+//
+//    // 设置昵称
+//    self.nameLabel.text = shopinfo.busshopname;
+//
+//    // 设置导航条商户名称
+//    self.navigationView.titleLabel.text = shopinfo.busshopname;
+//
+//    // 三个中有一个开通怎表示显示百秒送图标
+//    bool isOpen = shopinfo.posttype.bms.boolValue || shopinfo.posttype.qms.boolValue ||
+//                  shopinfo.posttype.wms.boolValue;
+//    self.bmsImageView.hidden = !isOpen;
+//    //
+//    // 设置子控制器
+//    [self setUpChildControlllerWithControllers:vcs];
+//
+//    // 设置titleBar
+//    [self setupTitleBarWithControllers:vcs shopCount:shopinfo.product.count];
+//}
+
+//- (void)setupBroadcastWithshopInfo:(WZShopInfoItem *)shopinfo
+//                  broadcastContent:(NSString *)broadcast_content {
+//    // pay redpaper coupon 3 buysend
+//    NSMutableArray *couponTypes = [NSMutableArray array];
+//    if ([shopinfo.online_pay intValue] > 0) {
+//        [couponTypes addObject:[RPPBroadcastHelper RPStringFromEnumCouponType:CouponTypeOnlinePay]];
+//    }
+//
+//    if ([shopinfo.wz_redpaper intValue] > 0) {
+//        [couponTypes addObject:[RPPBroadcastHelper RPStringFromEnumCouponType:CouponTypeRedPaper]];
+//    }
+//
+//    if ([shopinfo.give_flag intValue] > 0) {
+//        [couponTypes addObject:[RPPBroadcastHelper RPStringFromEnumCouponType:CouponTypeBuySend]];
+//    }
+//
+//    if ([broadcast_content length] > 0) {
+//        RPPShopDetailBroadcastView *broadcastView =
+//            [[RPPShopDetailBroadcastView alloc] initWithFrame:self.adView.bounds];
+//        broadcastView.broadcastContent = broadcast_content;
+//        broadcastView.couponTypes = couponTypes;
+//        //        broadcastView.backgroundColor = XZColor(255, 244, 202);
+//        [self.adView addSubview:broadcastView];
+//        [self.adView bringSubviewToFront:broadcastView];
+//
+//        __weak typeof(self) weakSelf = self;
+//        broadcastView.clickBroadcastViewBlock = ^(RPPShopDetailBroadcastView *broadcastView) {
+//            __strong __typeof(weakSelf) strongSelf = weakSelf;
+//            if (strongSelf) {
+//                RPPBroadcastDetailViewController *vc =
+//                    [[RPPBroadcastDetailViewController alloc] init];
+//                vc.shopName = shopinfo.busshopname;
+//                vc.shopEvaluation = [shopinfo.evaluate floatValue];
+//                vc.broadcastContent = broadcastView.broadcastContent;
+//                vc.couponTypes = broadcastView.couponTypes;
+//                vc.screenCaptureImage = [RPPBroadcastHelper screenCaptureView:strongSelf.view];
+//                [strongSelf presentViewController:vc
+//                                         animated:YES
+//                                       completion:^{
+//
+//                                       }];
+//            }
+//        };
+//    }
+//}
+
+// 设置子控制器
+- (void)setUpChildControlllerWithControllers:(NSArray *)vcs {
+    CGSize size = [UIScreen mainScreen].bounds.size;
+    NSInteger index = 0;
+    CGRect frame = [UIScreen mainScreen].bounds;
+    for (XZCustomTableViewController *personChildVc in vcs) {
+
+        // 传递tabBar，用来判断点击了哪个按钮
+        personChildVc.titleBar = _titleBar;
+
+        // 传递高度约束，用来移动头部视图
+        personChildVc.headHCons = _headViewCons;
+
+        // 传递标题控件，设置文字透明
+        personChildVc.titleLabel = _titleLabel;
+        frame.origin.x = index * size.width;
+        personChildVc.view.frame = frame;
+        [_contentView addSubview:personChildVc.view];
+        [self addChildViewController:personChildVc];
+        index++;
+    }
+
+    _contentView.contentSize = CGSizeMake(vcs.count * size.width, size.height);
+}
+
+// 设置tabBar
+- (void)setupTitleBarWithControllers:(NSArray *)vcs shopCount:(NSInteger)count {
+    NSInteger index = count > 0 ? 0 : 1;
+    // 遍历子控制器
+    for (UIViewController *childVc in vcs) {
+
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+
+        btn.tag = _titleBar.subviews.count;
+
+        btn.titleLabel.font = [UIFont systemFontOfSize:14];
+
+        [btn setTitle:childVc.title forState:UIControlStateNormal];
+
+        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+
+        [btn setTitleColor:[UIHelper AppMainColor] forState:UIControlStateSelected];
+
+        [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchDown];
+
+        if (btn.tag == index) {
+            [self btnClick:btn];
+        }
+
+        [_titleBar addSubview:btn];
+    }
+
+    // 设置lineView的宽度
+    self.lineViewConstraintWidth.constant = _titleBar.width / vcs.count;
+}
+- (void)btnClick:(UIButton *)btn {
+
+    if (btn == _selectedBtn) {
+        return;
+    }
+
+    // 上次选中的视图
+    XZCustomViewController *lastVc = self.childViewControllers[_selectedBtn.tag];
+    UITableView *lastVcView = lastVc.tableView;
+
+    // 选中按钮
+    _selectedBtn.selected = NO;
+    btn.selected = YES;
+    _selectedBtn = btn;
+
+    // 切换内容视图显示
+    UITableViewController *vc = self.childViewControllers[btn.tag];
+
+    [_contentView setContentOffset:CGPointMake(vc.view.frame.origin.x, 0)];
+
+    // 设置tableView的滚动区域
+    if (lastVcView.contentOffset.y > -(kHeadViewMinH + kTitleBarH)) {
+        vc.tableView.contentOffset = CGPointMake(0, -(kHeadViewMinH + kTitleBarH));
+    } else {
+        vc.tableView.contentOffset = lastVcView.contentOffset;
+    }
+
+    // 滚动视图
+    [UIView animateWithDuration:0.2
+                     animations:^{
+                         self.lineViewConstraint.constant = btn.x;
+                     }];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+
+    // 布局tabBar子控件位置
+    NSUInteger count = _titleBar.subviews.count;
+
+    CGFloat btnW = self.view.bounds.size.width / count;
+
+    CGFloat btnH = _titleBar.bounds.size.height;
+
+    CGFloat btnX = 0;
+
+    CGFloat btnY = 0;
+
+    for (int i = 0; i < count; i++) {
+
+        btnX = i * btnW;
+
+        UIView *childV = _titleBar.subviews[i];
+
+        childV.frame = CGRectMake(btnX, btnY, btnW, btnH);
+    }
+    self.lineViewConstraint.constant = _selectedBtn.x;
+    [self.view layoutIfNeeded];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    NSUInteger page = scrollView.contentOffset.x / screenSize.width;
+    UIButton *btn = _titleBar.subviews[page];
+    [self btnClick:btn];
+}
+@end

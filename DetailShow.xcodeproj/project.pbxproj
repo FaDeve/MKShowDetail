@@ -13,19 +13,19 @@
 		5AC9D9041C8D23E000B6AFCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D9021C8D23E000B6AFCA /* Main.storyboard */; };
 		5AC9D9061C8D23E000B6AFCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D9051C8D23E000B6AFCA /* Assets.xcassets */; };
 		5AC9D9091C8D23E000B6AFCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D9071C8D23E000B6AFCA /* LaunchScreen.storyboard */; };
-		5AC9D94A1C8D720E00B6AFCA /* XZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D9461C8D720E00B6AFCA /* XZBaseViewController.m */; settings = {ASSET_TAGS = (); }; };
-		5AC9D94B1C8D720E00B6AFCA /* XZBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D9471C8D720E00B6AFCA /* XZBaseViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		5AC9D94C1C8D720E00B6AFCA /* XZCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D9491C8D720E00B6AFCA /* XZCustomViewController.m */; settings = {ASSET_TAGS = (); }; };
-		5AC9D94F1C8D733700B6AFCA /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D94E1C8D733700B6AFCA /* TestViewController.m */; settings = {ASSET_TAGS = (); }; };
-		5AC9D9521C8D73E500B6AFCA /* XZTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D9511C8D73E500B6AFCA /* XZTableView.m */; settings = {ASSET_TAGS = (); }; };
-		5AC9D9551C8D745000B6AFCA /* XZCustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D9541C8D745000B6AFCA /* XZCustomTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		5AC9D95B1C8D74CF00B6AFCA /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D95A1C8D74CF00B6AFCA /* UIImage+Extension.m */; settings = {ASSET_TAGS = (); }; };
-		5AC9D95E1C8D75A500B6AFCA /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D95D1C8D75A500B6AFCA /* OneViewController.m */; settings = {ASSET_TAGS = (); }; };
-		5AC9D9611C8D75AF00B6AFCA /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D9601C8D75AF00B6AFCA /* TwoViewController.m */; settings = {ASSET_TAGS = (); }; };
-		5AC9D9641C8D75BD00B6AFCA /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D9631C8D75BD00B6AFCA /* ThreeViewController.m */; settings = {ASSET_TAGS = (); }; };
-		5AC9D9661C8D7B9D00B6AFCA /* bgImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D9651C8D7B9D00B6AFCA /* bgImage.gif */; settings = {ASSET_TAGS = (); }; };
-		5AC9D96C1C8D849500B6AFCA /* lol.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D96B1C8D849500B6AFCA /* lol.jpg */; settings = {ASSET_TAGS = (); }; };
-		5AC9D96E1C8D849B00B6AFCA /* timo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D96D1C8D849B00B6AFCA /* timo.jpg */; settings = {ASSET_TAGS = (); }; };
+		5AC9D94A1C8D720E00B6AFCA /* XZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D9461C8D720E00B6AFCA /* XZBaseViewController.m */; };
+		5AC9D94B1C8D720E00B6AFCA /* XZBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D9471C8D720E00B6AFCA /* XZBaseViewController.xib */; };
+		5AC9D94C1C8D720E00B6AFCA /* XZCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D9491C8D720E00B6AFCA /* XZCustomViewController.m */; };
+		5AC9D94F1C8D733700B6AFCA /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D94E1C8D733700B6AFCA /* TestViewController.m */; };
+		5AC9D9521C8D73E500B6AFCA /* XZTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D9511C8D73E500B6AFCA /* XZTableView.m */; };
+		5AC9D95B1C8D74CF00B6AFCA /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D95A1C8D74CF00B6AFCA /* UIImage+Extension.m */; };
+		5AC9D95E1C8D75A500B6AFCA /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D95D1C8D75A500B6AFCA /* OneViewController.m */; };
+		5AC9D9611C8D75AF00B6AFCA /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D9601C8D75AF00B6AFCA /* TwoViewController.m */; };
+		5AC9D9641C8D75BD00B6AFCA /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D9631C8D75BD00B6AFCA /* ThreeViewController.m */; };
+		5AC9D9661C8D7B9D00B6AFCA /* bgImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D9651C8D7B9D00B6AFCA /* bgImage.gif */; };
+		5AC9D96C1C8D849500B6AFCA /* lol.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D96B1C8D849500B6AFCA /* lol.jpg */; };
+		5AC9D96E1C8D849B00B6AFCA /* timo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D96D1C8D849B00B6AFCA /* timo.jpg */; };
+		B24575DB1D1B818300227BCC /* UIView+Layer.m in Sources */ = {isa = PBXBuildFile; fileRef = B24575DA1D1B818300227BCC /* UIView+Layer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +48,6 @@
 		5AC9D94E1C8D733700B6AFCA /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		5AC9D9501C8D73E500B6AFCA /* XZTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZTableView.h; sourceTree = "<group>"; };
 		5AC9D9511C8D73E500B6AFCA /* XZTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZTableView.m; sourceTree = "<group>"; };
-		5AC9D9531C8D745000B6AFCA /* XZCustomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZCustomTableViewController.h; sourceTree = "<group>"; };
-		5AC9D9541C8D745000B6AFCA /* XZCustomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZCustomTableViewController.m; sourceTree = "<group>"; };
 		5AC9D9591C8D74CF00B6AFCA /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
 		5AC9D95A1C8D74CF00B6AFCA /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
 		5AC9D95C1C8D75A500B6AFCA /* OneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
@@ -61,6 +59,8 @@
 		5AC9D9651C8D7B9D00B6AFCA /* bgImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bgImage.gif; sourceTree = "<group>"; };
 		5AC9D96B1C8D849500B6AFCA /* lol.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lol.jpg; sourceTree = "<group>"; };
 		5AC9D96D1C8D849B00B6AFCA /* timo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timo.jpg; sourceTree = "<group>"; };
+		B24575D91D1B818300227BCC /* UIView+Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layer.h"; sourceTree = "<group>"; };
+		B24575DA1D1B818300227BCC /* UIView+Layer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layer.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,12 +134,12 @@
 				5AC9D9471C8D720E00B6AFCA /* XZBaseViewController.xib */,
 				5AC9D9481C8D720E00B6AFCA /* XZCustomViewController.h */,
 				5AC9D9491C8D720E00B6AFCA /* XZCustomViewController.m */,
-				5AC9D9531C8D745000B6AFCA /* XZCustomTableViewController.h */,
-				5AC9D9541C8D745000B6AFCA /* XZCustomTableViewController.m */,
 				5AC9D9501C8D73E500B6AFCA /* XZTableView.h */,
 				5AC9D9511C8D73E500B6AFCA /* XZTableView.m */,
 				5AC9D9591C8D74CF00B6AFCA /* UIImage+Extension.h */,
 				5AC9D95A1C8D74CF00B6AFCA /* UIImage+Extension.m */,
+				B24575D91D1B818300227BCC /* UIView+Layer.h */,
+				B24575DA1D1B818300227BCC /* UIView+Layer.m */,
 			);
 			path = XZDetail;
 			sourceTree = "<group>";
@@ -223,9 +223,9 @@
 				5AC9D95E1C8D75A500B6AFCA /* OneViewController.m in Sources */,
 				5AC9D9641C8D75BD00B6AFCA /* ThreeViewController.m in Sources */,
 				5AC9D9011C8D23E000B6AFCA /* ViewController.m in Sources */,
+				B24575DB1D1B818300227BCC /* UIView+Layer.m in Sources */,
 				5AC9D94A1C8D720E00B6AFCA /* XZBaseViewController.m in Sources */,
 				5AC9D94C1C8D720E00B6AFCA /* XZCustomViewController.m in Sources */,
-				5AC9D9551C8D745000B6AFCA /* XZCustomTableViewController.m in Sources */,
 				5AC9D8FE1C8D23E000B6AFCA /* AppDelegate.m in Sources */,
 				5AC9D95B1C8D74CF00B6AFCA /* UIImage+Extension.m in Sources */,
 				5AC9D8FB1C8D23E000B6AFCA /* main.m in Sources */,

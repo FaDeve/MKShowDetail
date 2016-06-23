@@ -11,7 +11,7 @@
 #import "XZTableView.h"
 #import "UIImage+Extension.h"
 
-#define XZHeadViewH 200
+#define XZHeadViewH 135
 
 #define XZHeadViewMinH 64
 
@@ -39,8 +39,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
     _lastOffsetY = -(XZHeadViewH + XZTabBarH);
     
     // 设置顶部额外滚动区域
@@ -48,8 +46,6 @@
     
     XZTableView *tableView = (XZTableView *)self.tableView;
     tableView.tabBar = _titleBar;
-    
-    
     
 }
 
@@ -68,6 +64,7 @@
     }
     
     _headHCons.constant = headH;
+    self.tableView.contentInset = UIEdgeInsetsMake(headH + XZTabBarH , 0, 0, 0);
     
     // 计算透明度，刚好拖动200 - 64 136，透明度为1
     
@@ -81,5 +78,7 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithWhite:1 alpha:alpha]] forBarMetrics:UIBarMetricsDefault];
     
 }
+
+
 
 @end

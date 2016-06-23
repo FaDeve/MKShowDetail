@@ -14,24 +14,27 @@
 
 @property (nonatomic, assign) CGFloat lastOffsetY;
 @property (nonatomic, assign) CGFloat alpha;
+@property (nonatomic, assign) BOOL run;
 @end
 
 @implementation XZCustomViewController
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.run = YES;
 }
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    self.run = NO;
 }
 -(void)viewDidLoad {
     
-    if ([self respondsToSelector:@selector( setAutomaticallyAdjustsScrollViewInsets:)]) {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
-    self.view.backgroundColor = [UIColor whiteColor];
+        if ([self respondsToSelector:@selector( setAutomaticallyAdjustsScrollViewInsets:)]) {
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
+        self.view.backgroundColor = [UIColor whiteColor];
     
     _lastOffsetY = -(kHeadViewH+ kTitleBarH);
-    
+
     // 设置顶部额外滚动区域
     self.tableView.contentInset = UIEdgeInsetsMake(kHeadViewH + kTitleBarH , 0, 0, 0);
     
@@ -53,6 +56,9 @@
 CGFloat oldTop = 0;
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    if (self.run==NO) {
+        return;
+    }
     if (scrollView.tag == 1024) {
         // 获取当前偏移量
         CGFloat offsetY = scrollView.contentOffset.y;
@@ -72,6 +78,9 @@ CGFloat oldTop = 0;
         if (top>=kTitleBarH +kHeadViewH) {
             top = kTitleBarH + kHeadViewH;
         }
+//        else{
+//            top = kTitleBarH +kHeadViewMinH;
+//        }
         if (oldTop !=top) {
             self.tableView.contentInset = UIEdgeInsetsMake(top, 0, 0, 0);
             oldTop = top;

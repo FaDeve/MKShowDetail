@@ -8,7 +8,6 @@
 
 #import "XZBaseViewController.h"
 #import "XZCustomViewController.h"
-#import "XZCustomTableViewController.h"
 
 @interface XZBaseViewController ()<UIScrollViewDelegate>
 /**
@@ -107,7 +106,7 @@
     CGSize size = [UIScreen mainScreen].bounds.size;
     NSInteger index = 0;
     CGRect frame = [UIScreen mainScreen].bounds;
-    for (XZCustomTableViewController *personChildVc in vcs) {
+    for (XZCustomViewController *personChildVc in vcs) {
         
         // 传递tabBar，用来判断点击了哪个按钮
         personChildVc.titleBar = _titleBar;

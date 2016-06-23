@@ -1,0 +1,29 @@
+//
+//  XZBaseViewController.h
+//  DetailShow
+//
+//  Created by 微指 on 16/3/7.
+//  Copyright © 2016年 CityNight. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "XZNavigationView.h"
+
+@class WZShopInfoItem;
+@interface XZBaseViewController : UIViewController
+
+/// 模拟导航条
+@property (weak, nonatomic) IBOutlet XZNavigationView *navigationView;
+
+/**
+ *  设置显示效果
+ *
+ *  @param iconImage 头像
+ *  @param cardImage 背景图片
+ *  @param name      标题
+ *  @param vcs       所要创建的控制器
+ */
+- (void)configUIWithShopInfo:(WZShopInfoItem *)shopinfo
+            broadcastContent:(NSString *)broadcast_content
+             withControllers:(NSArray *)vcs;
+@end

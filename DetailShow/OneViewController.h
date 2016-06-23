@@ -6,8 +6,8 @@
 //  Copyright © 2016年 CityNight. All rights reserved.
 //
 
-#import "XZCustomTableViewController.h"
+#import "XZCustomViewController.h"
 
-@interface OneViewController : XZCustomTableViewController
+@interface OneViewController : XZCustomViewController
 
 @end

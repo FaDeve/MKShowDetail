@@ -9,6 +9,8 @@
 #import "XZBaseViewController.h"
 #import "XZCustomViewController.h"
 
+static NSString *const keyPath = @"center";
+
 @interface XZBaseViewController ()<UIScrollViewDelegate>
 /**
  *  标题内容
@@ -38,6 +40,16 @@
 
 @implementation XZBaseViewController
 
+#pragma mark - lifecycle
+-(void)dealloc {
+    @try {
+        [[NSNotificationCenter defaultCenter] removeObserver:self.titleBar forKeyPath:keyPath];
+    } @catch (NSException *exception) {
+        NSLog(@"exception:%@",exception);
+    } @finally {
+        NSLog(@"finally");
+    }
+}
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -57,12 +69,16 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:XZClickBtnNote object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
         
         UIButton *clickBtnObjc = note.userInfo[XZClickBtnObjcKey];
-        
         [self btnClick:clickBtnObjc];
-        
     }];
+    
+    [self.titleBar addObserver:self
+                    forKeyPath:keyPath
+                       options:NSKeyValueObservingOptionNew
+                       context:NULL];
 }
 
+#pragma mark - Public
 -(void)setIcon:(UIImage *)iconImage card:(UIImage *)cardImage shopName:(NSString *)name withControllers:(NSArray *)vcs {
    
     self.iconView.image = iconImage;
@@ -77,6 +93,7 @@
     [self setupTitleBarWithControllers:vcs];
 }
 
+#pragma mark - Private
 // 设置导航条
 - (void)setUpNav
 {
@@ -134,17 +151,11 @@
     for (UIViewController *childVc in vcs) {
         
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        
         btn.tag = _titleBar.subviews.count;
-        
         btn.titleLabel.font = [UIFont systemFontOfSize:14];
-        
         [btn setTitle:childVc.title forState:UIControlStateNormal];
-        
         [btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-        
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
-        
         [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchDown];
         
         if (btn.tag == 0) {
@@ -152,8 +163,6 @@
         }
         
         [_titleBar addSubview:btn];
-        
-        
     }
     
 }
@@ -188,11 +197,25 @@
     }
 }
 
+#pragma mark - NSNotification
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    if (![keyPath isEqualToString:keyPath]) {
+        return;
+    }
+    
+    for (NSInteger i = 0; i< self.childViewControllers.count; i++) {
+        if (i != self.selectedBtn.tag) {
+            XZCustomViewController *vc = self.childViewControllers[i];
+            vc.tableView.contentOffset = CGPointMake(0, - CGRectGetMaxY(self.titleBar.frame));
+        }
+    }
+}
+
+
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    
-    
+
     // 布局tabBar子控件位置
     NSUInteger count = _titleBar.subviews.count;
     
@@ -205,16 +228,12 @@
     CGFloat btnY = 0;
     
     for (int i = 0; i < count; i++) {
-        
         btnX = i * btnW;
-        
         UIView *childV = _titleBar.subviews[i];
-        
         childV.frame = CGRectMake(btnX, btnY, btnW, btnH);
-        
     }
 }
-
+#pragma mark - Delegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     NSUInteger page = scrollView.contentOffset.x / screenSize.width;

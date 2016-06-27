@@ -172,29 +172,20 @@ static NSString *const keyPath = @"center";
     if (btn == _selectedBtn) {
         return;
     }
-
-    // 上次选中的视图
-    XZCustomViewController *lastVc = self.childViewControllers[_selectedBtn.tag];
-    UITableView *lastVcView = lastVc.tableView;
-
     
     // 选中按钮
     _selectedBtn.selected = NO;
     btn.selected = YES;
-    _selectedBtn = btn;
     
     // 切换内容视图显示
     UITableViewController *vc = self.childViewControllers[btn.tag];
     
     [_contentView setContentOffset:CGPointMake(vc.view.frame.origin.x, 0)];
     
-    
-    // 设置tableView的滚动区域
-    if (lastVcView.contentOffset.y>-108) {
-        vc.tableView.contentOffset = CGPointMake(0, -108);
-    }else{
-        vc.tableView.contentOffset = lastVcView.contentOffset;
+    if (_selectedBtn == nil) {
+        vc.tableView.contentOffset = CGPointMake(0, -CGRectGetMaxY(self.titleBar.frame));
     }
+    _selectedBtn = btn;
 }
 
 #pragma mark - NSNotification

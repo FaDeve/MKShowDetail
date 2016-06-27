@@ -20,8 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.cardImage = [UIImage imageNamed:@"bgImage.gif"];
-//    self.iconImage = [UIImage imageNamed:@"icon.jpg"];
     // 设置导航条标题
     self.title = @"商户详情";
     self.view.backgroundColor = [UIColor whiteColor];

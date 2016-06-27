@@ -70,9 +70,12 @@ static NSString *const keyPath = @"contentOffset";
  */
 - (void)setupRightTableView {
 
-    self.tableView.frame = CGRectMake(ScreenSize.width/3, 0, ScreenSize.width *2/3, ScreenSize.height - kTitleBarH);
+    self.tableView = [[XZTableView alloc]initWithFrame:CGRectMake(ScreenSize.width/3, 0, ScreenSize.width *2/3, ScreenSize.height - kTitleBarH) style:UITableViewStylePlain];
+    self.tableView.tag =1024;
+    self.titleBar = self.titleBar;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
 }
 
 /**
@@ -200,6 +203,10 @@ CGFloat olderTop = 0;
     if (top>=kTitleBarH +kHeadViewH) {
         top = kTitleBarH + kHeadViewH;
     }
+    if (self.tableView.contentOffset.y <= -(kTitleBarH + kHeadViewH)) {
+        self.leftTableView.contentOffset = self.tableView.contentOffset;
+    }
+    
     if (olderTop !=top) {
         self.tableView.contentInset = UIEdgeInsetsMake(top, 0, 0, 0);
         self.leftTableView.contentInset = UIEdgeInsetsMake(top, 0, 0, 0);

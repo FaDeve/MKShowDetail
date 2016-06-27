@@ -98,8 +98,8 @@ static NSString *const keyPath = @"center";
 - (void)setUpNav
 {
     // 导航条背景透明
-    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+//    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
     
     // 设置导航条中间view
     UILabel *label = [[UILabel alloc] init];

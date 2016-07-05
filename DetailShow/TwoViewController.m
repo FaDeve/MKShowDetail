@@ -40,7 +40,7 @@
     }
     
     
-    cell.textLabel.text = [NSString stringWithFormat:@"XZCustomViewController一个tableView%ld",indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"再测...一个tableView%ld",indexPath.row];
     
     return cell;
 }

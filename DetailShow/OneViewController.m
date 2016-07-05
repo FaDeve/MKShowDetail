@@ -40,7 +40,7 @@
     }
     
     
-    cell.textLabel.text = [NSString stringWithFormat:@"继承自XZCustomTableViewController%ld",indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"测试%ld",indexPath.row];
     
     return cell;
 }

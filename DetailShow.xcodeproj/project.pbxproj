@@ -23,8 +23,6 @@
 		B2F6B2061D2BA99900773F06 /* beijingiocn.png in Resources */ = {isa = PBXBuildFile; fileRef = B2F6B1F61D2BA99900773F06 /* beijingiocn.png */; };
 		B2F6B2071D2BA99900773F06 /* beijingiocn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2F6B1F71D2BA99900773F06 /* beijingiocn@2x.png */; };
 		B2F6B2081D2BA99900773F06 /* beijingiocn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2F6B1F81D2BA99900773F06 /* beijingiocn@3x.png */; };
-		B2F6B2091D2BA99900773F06 /* UIImage+XZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F6B1FA1D2BA99900773F06 /* UIImage+XZExtension.m */; };
-		B2F6B20A1D2BA99900773F06 /* UIView+Layer.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F6B1FC1D2BA99900773F06 /* UIView+Layer.m */; };
 		B2F6B20B1D2BA99900773F06 /* XZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F6B1FE1D2BA99900773F06 /* XZBaseViewController.m */; };
 		B2F6B20C1D2BA99900773F06 /* XZBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F6B1FF1D2BA99900773F06 /* XZBaseViewController.xib */; };
 		B2F6B20D1D2BA99900773F06 /* XZCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F6B2011D2BA99900773F06 /* XZCustomViewController.m */; };
@@ -56,10 +54,6 @@
 		B2F6B1F61D2BA99900773F06 /* beijingiocn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beijingiocn.png; sourceTree = "<group>"; };
 		B2F6B1F71D2BA99900773F06 /* beijingiocn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beijingiocn@2x.png"; sourceTree = "<group>"; };
 		B2F6B1F81D2BA99900773F06 /* beijingiocn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beijingiocn@3x.png"; sourceTree = "<group>"; };
-		B2F6B1F91D2BA99900773F06 /* UIImage+XZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+XZExtension.h"; sourceTree = "<group>"; };
-		B2F6B1FA1D2BA99900773F06 /* UIImage+XZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XZExtension.m"; sourceTree = "<group>"; };
-		B2F6B1FB1D2BA99900773F06 /* UIView+Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layer.h"; sourceTree = "<group>"; };
-		B2F6B1FC1D2BA99900773F06 /* UIView+Layer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layer.m"; sourceTree = "<group>"; };
 		B2F6B1FD1D2BA99900773F06 /* XZBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZBaseViewController.h; sourceTree = "<group>"; };
 		B2F6B1FE1D2BA99900773F06 /* XZBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZBaseViewController.m; sourceTree = "<group>"; };
 		B2F6B1FF1D2BA99900773F06 /* XZBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZBaseViewController.xib; sourceTree = "<group>"; };
@@ -136,10 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				B2F6B1F51D2BA99900773F06 /* Resources */,
-				B2F6B1F91D2BA99900773F06 /* UIImage+XZExtension.h */,
-				B2F6B1FA1D2BA99900773F06 /* UIImage+XZExtension.m */,
-				B2F6B1FB1D2BA99900773F06 /* UIView+Layer.h */,
-				B2F6B1FC1D2BA99900773F06 /* UIView+Layer.m */,
 				B2F6B1FD1D2BA99900773F06 /* XZBaseViewController.h */,
 				B2F6B1FE1D2BA99900773F06 /* XZBaseViewController.m */,
 				B2F6B1FF1D2BA99900773F06 /* XZBaseViewController.xib */,
@@ -247,8 +237,6 @@
 				B2F6B20F1D2BA99900773F06 /* XZTableView.m in Sources */,
 				5AC9D8FE1C8D23E000B6AFCA /* AppDelegate.m in Sources */,
 				5AC9D8FB1C8D23E000B6AFCA /* main.m in Sources */,
-				B2F6B20A1D2BA99900773F06 /* UIView+Layer.m in Sources */,
-				B2F6B2091D2BA99900773F06 /* UIImage+XZExtension.m in Sources */,
 				B2F6B20D1D2BA99900773F06 /* XZCustomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

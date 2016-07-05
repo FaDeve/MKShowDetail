@@ -8,8 +8,6 @@
 
 #import "XZCustomViewController.h"
 
-#import "UIImage+XZExtension.h"
-
 @interface XZCustomViewController () <UITableViewDelegate>
 
 @property (nonatomic, assign) CGFloat lastOffsetY;

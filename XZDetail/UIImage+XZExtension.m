@@ -6,9 +6,9 @@
 //  Copyright © 2016年 CityNight. All rights reserved.
 //
 
-#import "UIImage+Extension.h"
+#import "UIImage+XZExtension.h"
 
-@implementation UIImage (Extension)
+@implementation UIImage (XZExtension)
 + (UIImage *)imageWithColor:(UIColor *)color
 {
     // 描述矩形

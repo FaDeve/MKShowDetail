@@ -8,7 +8,7 @@
 
 #import "XZCustomViewController.h"
 
-#import "UIImage+Extension.h"
+#import "UIImage+XZExtension.h"
 
 @interface XZCustomViewController () <UITableViewDelegate>
 
@@ -19,9 +19,11 @@
 @implementation XZCustomViewController
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.view.hidden = NO;
 }
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    self.view.hidden = YES;
 }
 -(void)viewDidLoad {
     

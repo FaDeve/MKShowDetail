@@ -12,30 +12,14 @@
 static NSString *const keyPath = @"center";
 
 @interface XZBaseViewController ()<UIScrollViewDelegate>
-/**
- *  标题内容
- */
-@property (nonatomic, weak) UILabel *titleLabel;
-/**
- *  选择栏
- */
-@property (weak, nonatomic) IBOutlet UIView *titleBar;
 
-@property (weak, nonatomic) IBOutlet UIScrollView *contentView;
+@property (nonatomic, weak) UILabel *titleLabel;    ///< 标题内容
+@property (weak, nonatomic) IBOutlet UIView *titleBar;  ///< 选择栏
+@property (weak, nonatomic) IBOutlet UIScrollView *contentView; ///盛放滚动控制器的视图
+@property (nonatomic, weak) UIButton *selectedBtn;  ///< 当前选中的button
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headViewCons;  ///< 头部视图高度
+@property (weak, nonatomic) IBOutlet UIImageView *cardView; ///< 明信片控件
 
-@property (nonatomic, weak) UIButton *selectedBtn;
-
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headViewCons;
-
-// 头像控件
-@property (weak, nonatomic) IBOutlet UIImageView *iconView;
-
-// 明信片控件
-@property (weak, nonatomic) IBOutlet UIImageView *cardView;
-/**
- *  商户名称
- */
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @end
 
 @implementation XZBaseViewController
@@ -81,11 +65,7 @@ static NSString *const keyPath = @"center";
 #pragma mark - Public
 -(void)setIcon:(UIImage *)iconImage card:(UIImage *)cardImage shopName:(NSString *)name withControllers:(NSArray *)vcs {
    
-    self.iconView.image = iconImage;
-    
     self.cardView.image = cardImage;
-    self.nameLabel.text = name;
-    [self setUpNav];
     // 设置子控制器
     [self setUpChildControlllerWithControllers:vcs];
     
@@ -94,28 +74,6 @@ static NSString *const keyPath = @"center";
 }
 
 #pragma mark - Private
-// 设置导航条
-- (void)setUpNav
-{
-    // 导航条背景透明
-//    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-//    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
-    
-    // 设置导航条中间view
-    UILabel *label = [[UILabel alloc] init];
-    
-    _titleLabel = label;
-    
-    label.font = [UIFont  boldSystemFontOfSize:18];
-    
-    label.text = self.title;
-    
-    [label setTextColor:[UIColor colorWithWhite:0 alpha:0]];
-    
-    [label sizeToFit];
-    
-    self.navigationItem.titleView = label;
-}
 
 // 设置子控制器
 - (void)setUpChildControlllerWithControllers:(NSArray *)vcs

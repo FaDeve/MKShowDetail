@@ -10,8 +10,7 @@
                 <outlet property="cardView" destination="hWu-VW-xc9" id="RIU-I8-qVc"/>
                 <outlet property="contentView" destination="doH-SK-EPl" id="uZ4-GA-vDS"/>
                 <outlet property="headViewCons" destination="CWb-gd-28D" id="mkc-G9-ePl"/>
-                <outlet property="iconView" destination="Yxp-UA-ld2" id="1yx-o3-72y"/>
-                <outlet property="nameLabel" destination="d10-a4-CdV" id="TNk-Vn-6PG"/>
+                <outlet property="headerView" destination="Rph-qq-qgC" id="9nX-sk-ACM"/>
                 <outlet property="titleBar" destination="Dfg-3F-XZ1" id="5P3-2U-Xie"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -34,51 +33,14 @@
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lol.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hWu-VW-xc9">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Yxp-UA-ld2">
-                            <rect key="frame" x="20" y="100" width="80" height="80"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="80" id="EcE-to-xjO"/>
-                                <constraint firstAttribute="height" constant="80" id="o2a-pB-jhY"/>
-                            </constraints>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商店名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d10-a4-CdV">
-                            <rect key="frame" x="108" y="100" width="68" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TND-AO-JyL">
-                            <rect key="frame" x="108" y="129" width="80" height="23"/>
-                            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="23" id="2AH-1x-wzN"/>
-                                <constraint firstAttribute="width" constant="80" id="BXZ-iF-5k1"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dad-2q-1gB">
-                            <rect key="frame" x="108" y="160" width="259" height="25"/>
-                            <color key="backgroundColor" red="0.98039215690000003" green="0.43921568630000002" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="25" id="jH8-XZ-PQM"/>
-                            </constraints>
-                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="TND-AO-JyL" firstAttribute="top" secondItem="d10-a4-CdV" secondAttribute="bottom" constant="8" id="0a6-QE-Cd3"/>
-                        <constraint firstAttribute="bottom" secondItem="Yxp-UA-ld2" secondAttribute="bottom" constant="20" id="0e0-b6-jne"/>
-                        <constraint firstItem="Yxp-UA-ld2" firstAttribute="leading" secondItem="Rph-qq-qgC" secondAttribute="leading" constant="20" id="0yz-Ah-MfG"/>
                         <constraint firstAttribute="bottom" secondItem="hWu-VW-xc9" secondAttribute="bottom" id="9XF-6S-byN"/>
                         <constraint firstAttribute="height" constant="200" id="CWb-gd-28D"/>
                         <constraint firstAttribute="trailing" secondItem="hWu-VW-xc9" secondAttribute="trailing" id="HuS-Q5-N2T"/>
-                        <constraint firstItem="d10-a4-CdV" firstAttribute="top" secondItem="Yxp-UA-ld2" secondAttribute="top" id="JeY-ed-F4h"/>
-                        <constraint firstItem="Dad-2q-1gB" firstAttribute="leading" secondItem="d10-a4-CdV" secondAttribute="leading" id="KeA-Rd-R8z"/>
-                        <constraint firstItem="Dad-2q-1gB" firstAttribute="top" secondItem="TND-AO-JyL" secondAttribute="bottom" constant="8" id="T2o-Az-HLl"/>
-                        <constraint firstItem="TND-AO-JyL" firstAttribute="leading" secondItem="d10-a4-CdV" secondAttribute="leading" id="j1m-Ww-YPt"/>
                         <constraint firstItem="hWu-VW-xc9" firstAttribute="top" secondItem="Rph-qq-qgC" secondAttribute="top" id="oby-Ti-AvU"/>
                         <constraint firstItem="hWu-VW-xc9" firstAttribute="leading" secondItem="Rph-qq-qgC" secondAttribute="leading" id="uMb-HK-hP8"/>
-                        <constraint firstAttribute="trailing" secondItem="Dad-2q-1gB" secondAttribute="trailing" constant="8" id="v0a-cs-LoP"/>
-                        <constraint firstItem="d10-a4-CdV" firstAttribute="leading" secondItem="Yxp-UA-ld2" secondAttribute="trailing" constant="8" id="yg6-Dr-GZa"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dfg-3F-XZ1" userLabel="选项卡视图">
@@ -111,6 +73,5 @@
     </objects>
     <resources>
         <image name="lol.jpg" width="500" height="391"/>
-        <image name="timo.jpg" width="200" height="200"/>
     </resources>
 </document>

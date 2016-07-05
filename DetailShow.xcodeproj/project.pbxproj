@@ -28,7 +28,6 @@
 		B2F6B20B1D2BA99900773F06 /* XZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F6B1FE1D2BA99900773F06 /* XZBaseViewController.m */; };
 		B2F6B20C1D2BA99900773F06 /* XZBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F6B1FF1D2BA99900773F06 /* XZBaseViewController.xib */; };
 		B2F6B20D1D2BA99900773F06 /* XZCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F6B2011D2BA99900773F06 /* XZCustomViewController.m */; };
-		B2F6B20E1D2BA99900773F06 /* XZNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F6B2031D2BA99900773F06 /* XZNavigationView.m */; };
 		B2F6B20F1D2BA99900773F06 /* XZTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F6B2051D2BA99900773F06 /* XZTableView.m */; };
 /* End PBXBuildFile section */
 
@@ -66,8 +65,6 @@
 		B2F6B1FF1D2BA99900773F06 /* XZBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZBaseViewController.xib; sourceTree = "<group>"; };
 		B2F6B2001D2BA99900773F06 /* XZCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZCustomViewController.h; sourceTree = "<group>"; };
 		B2F6B2011D2BA99900773F06 /* XZCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZCustomViewController.m; sourceTree = "<group>"; };
-		B2F6B2021D2BA99900773F06 /* XZNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZNavigationView.h; sourceTree = "<group>"; };
-		B2F6B2031D2BA99900773F06 /* XZNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZNavigationView.m; sourceTree = "<group>"; };
 		B2F6B2041D2BA99900773F06 /* XZTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZTableView.h; sourceTree = "<group>"; };
 		B2F6B2051D2BA99900773F06 /* XZTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,8 +145,6 @@
 				B2F6B1FF1D2BA99900773F06 /* XZBaseViewController.xib */,
 				B2F6B2001D2BA99900773F06 /* XZCustomViewController.h */,
 				B2F6B2011D2BA99900773F06 /* XZCustomViewController.m */,
-				B2F6B2021D2BA99900773F06 /* XZNavigationView.h */,
-				B2F6B2031D2BA99900773F06 /* XZNavigationView.m */,
 				B2F6B2041D2BA99900773F06 /* XZTableView.h */,
 				B2F6B2051D2BA99900773F06 /* XZTableView.m */,
 			);
@@ -245,7 +240,6 @@
 			files = (
 				5AC9D9611C8D75AF00B6AFCA /* TwoViewController.m in Sources */,
 				5AC9D94F1C8D733700B6AFCA /* TestViewController.m in Sources */,
-				B2F6B20E1D2BA99900773F06 /* XZNavigationView.m in Sources */,
 				5AC9D95E1C8D75A500B6AFCA /* OneViewController.m in Sources */,
 				B2F6B20B1D2BA99900773F06 /* XZBaseViewController.m in Sources */,
 				5AC9D9641C8D75BD00B6AFCA /* ThreeViewController.m in Sources */,

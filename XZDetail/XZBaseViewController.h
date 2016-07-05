@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface XZBaseViewController : UIViewController
+/// 头部视图
+@property (weak, nonatomic) IBOutlet UIView *headerView;
 
 /**
  *  设置显示效果

@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.platform             = :ios, "7.0"
   s.source               = { :git => "https://github.com/Mekor/MKShowDetail.git", :tag => s.version }
   s.source_files          = "MKShowDetail/**/*"
-  #s.resources          = "MKShowDetail/**/*.{png,jpg}"
+  s.resources          = "MKShowDetail/**/*"
   s.requires_arc         = true
   s.frameworks = 'UIKit'                  #所需的framework，多个用逗号隔开
 

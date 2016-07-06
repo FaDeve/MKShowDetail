@@ -20,10 +20,10 @@
 		5AC9D9661C8D7B9D00B6AFCA /* bgImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D9651C8D7B9D00B6AFCA /* bgImage.gif */; };
 		5AC9D96C1C8D849500B6AFCA /* lol.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D96B1C8D849500B6AFCA /* lol.jpg */; };
 		5AC9D96E1C8D849B00B6AFCA /* timo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D96D1C8D849B00B6AFCA /* timo.jpg */; };
-		B246D34B1D2CCACF005A96A8 /* XZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B246D3451D2CCACF005A96A8 /* XZBaseViewController.m */; };
-		B246D34C1D2CCACF005A96A8 /* XZBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B246D3461D2CCACF005A96A8 /* XZBaseViewController.xib */; };
-		B246D34D1D2CCACF005A96A8 /* XZCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B246D3481D2CCACF005A96A8 /* XZCustomViewController.m */; };
-		B246D34E1D2CCACF005A96A8 /* XZTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B246D34A1D2CCACF005A96A8 /* XZTableView.m */; };
+		B246D3571D2CCCB4005A96A8 /* XZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B246D3511D2CCCB4005A96A8 /* XZBaseViewController.m */; };
+		B246D3581D2CCCB4005A96A8 /* XZBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B246D3521D2CCCB4005A96A8 /* XZBaseViewController.xib */; };
+		B246D3591D2CCCB4005A96A8 /* XZCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B246D3541D2CCCB4005A96A8 /* XZCustomViewController.m */; };
+		B246D35A1D2CCCB4005A96A8 /* XZTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B246D3561D2CCCB4005A96A8 /* XZTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,13 +48,13 @@
 		5AC9D9651C8D7B9D00B6AFCA /* bgImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bgImage.gif; sourceTree = "<group>"; };
 		5AC9D96B1C8D849500B6AFCA /* lol.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lol.jpg; sourceTree = "<group>"; };
 		5AC9D96D1C8D849B00B6AFCA /* timo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timo.jpg; sourceTree = "<group>"; };
-		B246D3441D2CCACF005A96A8 /* XZBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZBaseViewController.h; sourceTree = "<group>"; };
-		B246D3451D2CCACF005A96A8 /* XZBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZBaseViewController.m; sourceTree = "<group>"; };
-		B246D3461D2CCACF005A96A8 /* XZBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZBaseViewController.xib; sourceTree = "<group>"; };
-		B246D3471D2CCACF005A96A8 /* XZCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZCustomViewController.h; sourceTree = "<group>"; };
-		B246D3481D2CCACF005A96A8 /* XZCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZCustomViewController.m; sourceTree = "<group>"; };
-		B246D3491D2CCACF005A96A8 /* XZTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZTableView.h; sourceTree = "<group>"; };
-		B246D34A1D2CCACF005A96A8 /* XZTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZTableView.m; sourceTree = "<group>"; };
+		B246D3501D2CCCB4005A96A8 /* XZBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZBaseViewController.h; sourceTree = "<group>"; };
+		B246D3511D2CCCB4005A96A8 /* XZBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZBaseViewController.m; sourceTree = "<group>"; };
+		B246D3521D2CCCB4005A96A8 /* XZBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZBaseViewController.xib; sourceTree = "<group>"; };
+		B246D3531D2CCCB4005A96A8 /* XZCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZCustomViewController.h; sourceTree = "<group>"; };
+		B246D3541D2CCCB4005A96A8 /* XZCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZCustomViewController.m; sourceTree = "<group>"; };
+		B246D3551D2CCCB4005A96A8 /* XZTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZTableView.h; sourceTree = "<group>"; };
+		B246D3561D2CCCB4005A96A8 /* XZTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 		5AC9D8F81C8D23E000B6AFCA /* DetailShow */ = {
 			isa = PBXGroup;
 			children = (
-				B246D3431D2CCACF005A96A8 /* MKShowDetail */,
+				B246D34F1D2CCCB4005A96A8 /* MKShowDetail */,
 				5AC9D8FC1C8D23E000B6AFCA /* AppDelegate.h */,
 				5AC9D8FD1C8D23E000B6AFCA /* AppDelegate.m */,
 				5AC9D8FF1C8D23E000B6AFCA /* ViewController.h */,
@@ -120,19 +120,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B246D3431D2CCACF005A96A8 /* MKShowDetail */ = {
+		B246D34F1D2CCCB4005A96A8 /* MKShowDetail */ = {
 			isa = PBXGroup;
 			children = (
-				B246D3441D2CCACF005A96A8 /* XZBaseViewController.h */,
-				B246D3451D2CCACF005A96A8 /* XZBaseViewController.m */,
-				B246D3461D2CCACF005A96A8 /* XZBaseViewController.xib */,
-				B246D3471D2CCACF005A96A8 /* XZCustomViewController.h */,
-				B246D3481D2CCACF005A96A8 /* XZCustomViewController.m */,
-				B246D3491D2CCACF005A96A8 /* XZTableView.h */,
-				B246D34A1D2CCACF005A96A8 /* XZTableView.m */,
+				B246D3501D2CCCB4005A96A8 /* XZBaseViewController.h */,
+				B246D3511D2CCCB4005A96A8 /* XZBaseViewController.m */,
+				B246D3521D2CCCB4005A96A8 /* XZBaseViewController.xib */,
+				B246D3531D2CCCB4005A96A8 /* XZCustomViewController.h */,
+				B246D3541D2CCCB4005A96A8 /* XZCustomViewController.m */,
+				B246D3551D2CCCB4005A96A8 /* XZTableView.h */,
+				B246D3561D2CCCB4005A96A8 /* XZTableView.m */,
 			);
-			path = MKShowDetail;
-			sourceTree = SOURCE_ROOT;
+			name = MKShowDetail;
+			path = ../../MKShowDetail;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -195,7 +196,7 @@
 				5AC9D9091C8D23E000B6AFCA /* LaunchScreen.storyboard in Resources */,
 				5AC9D96E1C8D849B00B6AFCA /* timo.jpg in Resources */,
 				5AC9D96C1C8D849500B6AFCA /* lol.jpg in Resources */,
-				B246D34C1D2CCACF005A96A8 /* XZBaseViewController.xib in Resources */,
+				B246D3581D2CCCB4005A96A8 /* XZBaseViewController.xib in Resources */,
 				5AC9D9061C8D23E000B6AFCA /* Assets.xcassets in Resources */,
 				5AC9D9041C8D23E000B6AFCA /* Main.storyboard in Resources */,
 			);
@@ -208,14 +209,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B246D34D1D2CCACF005A96A8 /* XZCustomViewController.m in Sources */,
+				B246D3591D2CCCB4005A96A8 /* XZCustomViewController.m in Sources */,
 				5AC9D9611C8D75AF00B6AFCA /* TwoViewController.m in Sources */,
 				5AC9D94F1C8D733700B6AFCA /* TestViewController.m in Sources */,
 				5AC9D95E1C8D75A500B6AFCA /* OneViewController.m in Sources */,
 				5AC9D9641C8D75BD00B6AFCA /* ThreeViewController.m in Sources */,
 				5AC9D9011C8D23E000B6AFCA /* ViewController.m in Sources */,
-				B246D34B1D2CCACF005A96A8 /* XZBaseViewController.m in Sources */,
-				B246D34E1D2CCACF005A96A8 /* XZTableView.m in Sources */,
+				B246D3571D2CCCB4005A96A8 /* XZBaseViewController.m in Sources */,
+				B246D35A1D2CCCB4005A96A8 /* XZTableView.m in Sources */,
 				5AC9D8FE1C8D23E000B6AFCA /* AppDelegate.m in Sources */,
 				5AC9D8FB1C8D23E000B6AFCA /* main.m in Sources */,
 			);

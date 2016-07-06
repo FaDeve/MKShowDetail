@@ -65,7 +65,6 @@ CGFloat oldTop = 0;
         if (headH < kHeadViewMinH) {
             headH = kHeadViewMinH;
         }
-        
         _headHCons.constant = headH;
         
         CGFloat top = headH +kTitleBarH;

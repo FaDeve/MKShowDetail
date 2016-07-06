@@ -66,11 +66,15 @@ static NSString *const keyPath = @"center";
 -(void)setIcon:(UIImage *)iconImage card:(UIImage *)cardImage shopName:(NSString *)name withControllers:(NSArray *)vcs {
    
     self.cardView.image = cardImage;
+    
+}
+
+- (void)configTitleItemColor:(nullable UIColor *)color selectedColor:(nullable UIColor *)selColor textFont:(nullable UIFont *)font showControllers:(nonnull NSArray *)vcs{
     // 设置子控制器
     [self setUpChildControlllerWithControllers:vcs];
     
     // 设置titleBar
-    [self setupTitleBarWithControllers:vcs];
+    [self setupTitleBarWithControllers:vcs customColor:color selectedColor:selColor];
 }
 
 #pragma mark - Private
@@ -102,8 +106,11 @@ static NSString *const keyPath = @"center";
 }
 
 // 设置tabBar
-- (void)setupTitleBarWithControllers:(NSArray *)vcs
+- (void)setupTitleBarWithControllers:(NSArray *)vcs customColor:(UIColor *)color selectedColor:(UIColor *)selColor
 {
+    
+    UIColor *customColor = color?:[UIColor lightGrayColor];
+    UIColor *selectedColor = selColor?:[UIColor blackColor];
     // 遍历子控制器
     
     for (UIViewController *childVc in vcs) {
@@ -112,8 +119,8 @@ static NSString *const keyPath = @"center";
         btn.tag = _titleBar.subviews.count;
         btn.titleLabel.font = [UIFont systemFontOfSize:14];
         [btn setTitle:childVc.title forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
+        [btn setTitleColor:customColor forState:UIControlStateNormal];
+        [btn setTitleColor:selectedColor forState:UIControlStateSelected];
         [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchDown];
         
         if (btn.tag == 0) {

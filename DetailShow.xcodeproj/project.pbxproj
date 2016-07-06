@@ -20,9 +20,6 @@
 		5AC9D9661C8D7B9D00B6AFCA /* bgImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D9651C8D7B9D00B6AFCA /* bgImage.gif */; };
 		5AC9D96C1C8D849500B6AFCA /* lol.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D96B1C8D849500B6AFCA /* lol.jpg */; };
 		5AC9D96E1C8D849B00B6AFCA /* timo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D96D1C8D849B00B6AFCA /* timo.jpg */; };
-		B2F6B2061D2BA99900773F06 /* beijingiocn.png in Resources */ = {isa = PBXBuildFile; fileRef = B2F6B1F61D2BA99900773F06 /* beijingiocn.png */; };
-		B2F6B2071D2BA99900773F06 /* beijingiocn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2F6B1F71D2BA99900773F06 /* beijingiocn@2x.png */; };
-		B2F6B2081D2BA99900773F06 /* beijingiocn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2F6B1F81D2BA99900773F06 /* beijingiocn@3x.png */; };
 		B2F6B20B1D2BA99900773F06 /* XZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F6B1FE1D2BA99900773F06 /* XZBaseViewController.m */; };
 		B2F6B20C1D2BA99900773F06 /* XZBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F6B1FF1D2BA99900773F06 /* XZBaseViewController.xib */; };
 		B2F6B20D1D2BA99900773F06 /* XZCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F6B2011D2BA99900773F06 /* XZCustomViewController.m */; };
@@ -51,9 +48,6 @@
 		5AC9D9651C8D7B9D00B6AFCA /* bgImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bgImage.gif; sourceTree = "<group>"; };
 		5AC9D96B1C8D849500B6AFCA /* lol.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lol.jpg; sourceTree = "<group>"; };
 		5AC9D96D1C8D849B00B6AFCA /* timo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timo.jpg; sourceTree = "<group>"; };
-		B2F6B1F61D2BA99900773F06 /* beijingiocn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beijingiocn.png; sourceTree = "<group>"; };
-		B2F6B1F71D2BA99900773F06 /* beijingiocn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beijingiocn@2x.png"; sourceTree = "<group>"; };
-		B2F6B1F81D2BA99900773F06 /* beijingiocn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beijingiocn@3x.png"; sourceTree = "<group>"; };
 		B2F6B1FD1D2BA99900773F06 /* XZBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZBaseViewController.h; sourceTree = "<group>"; };
 		B2F6B1FE1D2BA99900773F06 /* XZBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZBaseViewController.m; sourceTree = "<group>"; };
 		B2F6B1FF1D2BA99900773F06 /* XZBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZBaseViewController.xib; sourceTree = "<group>"; };
@@ -129,7 +123,6 @@
 		B2F6B1F41D2BA99900773F06 /* XZDetail */ = {
 			isa = PBXGroup;
 			children = (
-				B2F6B1F51D2BA99900773F06 /* Resources */,
 				B2F6B1FD1D2BA99900773F06 /* XZBaseViewController.h */,
 				B2F6B1FE1D2BA99900773F06 /* XZBaseViewController.m */,
 				B2F6B1FF1D2BA99900773F06 /* XZBaseViewController.xib */,
@@ -140,16 +133,6 @@
 			);
 			path = XZDetail;
 			sourceTree = SOURCE_ROOT;
-		};
-		B2F6B1F51D2BA99900773F06 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				B2F6B1F61D2BA99900773F06 /* beijingiocn.png */,
-				B2F6B1F71D2BA99900773F06 /* beijingiocn@2x.png */,
-				B2F6B1F81D2BA99900773F06 /* beijingiocn@3x.png */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -208,16 +191,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2F6B2071D2BA99900773F06 /* beijingiocn@2x.png in Resources */,
 				5AC9D9661C8D7B9D00B6AFCA /* bgImage.gif in Resources */,
 				5AC9D9091C8D23E000B6AFCA /* LaunchScreen.storyboard in Resources */,
 				5AC9D96E1C8D849B00B6AFCA /* timo.jpg in Resources */,
-				B2F6B2081D2BA99900773F06 /* beijingiocn@3x.png in Resources */,
 				B2F6B20C1D2BA99900773F06 /* XZBaseViewController.xib in Resources */,
 				5AC9D96C1C8D849500B6AFCA /* lol.jpg in Resources */,
 				5AC9D9061C8D23E000B6AFCA /* Assets.xcassets in Resources */,
 				5AC9D9041C8D23E000B6AFCA /* Main.storyboard in Resources */,
-				B2F6B2061D2BA99900773F06 /* beijingiocn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

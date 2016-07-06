@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://weibo.com/gliii"
   s.platform             = :ios, "7.0"
   s.source               = { :git => "https://github.com/Mekor/MKShowDetail.git", :tag => s.version }
-  s.source_files          = "MKShowDetail/**/*"
-  s.resources          = "MKShowDetail/**/*"
+  s.source_files          = "MKShowDetail/**/*.{h,m}"
+  s.resources          = "MKShowDetail/**/*.xib"
   s.requires_arc         = true
   s.frameworks = 'UIKit'                  #所需的framework，多个用逗号隔开
 

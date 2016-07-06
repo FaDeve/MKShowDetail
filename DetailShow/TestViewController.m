@@ -55,7 +55,11 @@
     threeVc.title = @"three";
     [self addChildViewController:threeVc];
 
-    [self setIcon:[UIImage imageNamed:@"bgImage.gif"] card:[UIImage imageNamed:@"icon.jpg"] shopName:@"小争测试" withControllers:self.childViewControllers];
+    UIButton *showBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    showBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [showBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [showBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+    [self configTitleBarWithButtonType:showBtn showControllers:self.childViewControllers];
     
 }
 

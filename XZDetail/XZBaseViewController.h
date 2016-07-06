@@ -15,11 +15,8 @@
 /**
  *  设置显示效果
  *
- *  @param iconImage 头像
- *  @param cardImage 背景图片
- *  @param name      标题
+ *  @param showBtn   titleBar上显示的button
  *  @param vcs       所要创建的控制器
  */
-- (void)setIcon:(UIImage *)iconImage card:(UIImage *)cardImage shopName:(NSString *)name withControllers:(NSArray *)vcs;
-- (void)configTitleItemColor:(nullable UIColor *)color selectedColor:(nullable UIColor *)selColor textFont:(nullable UIFont *)font showControllers:(nonnull NSArray *)vcs;
+- (void)configTitleBarWithButtonType:(nonnull UIButton *)showBtn showControllers:(nonnull NSArray *)vcs;
 @end

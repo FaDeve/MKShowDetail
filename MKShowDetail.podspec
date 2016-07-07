@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                 = "MKShowDetail"
-  s.version              = "0.0.2"
+  s.version              = "0.0.3"
   s.summary              = "Show shopdetail,like ele,meituan etc"
   s.homepage             = "https://github.com/Mekor/MKShowDetail"
   s.license              = { :type => "MIT", :file => "LICENSE" }

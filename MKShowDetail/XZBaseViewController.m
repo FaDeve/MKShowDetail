@@ -18,7 +18,7 @@ static NSString *const keyPath = @"center";
 @property (weak, nonatomic) IBOutlet UIScrollView *contentView; ///盛放滚动控制器的视图
 @property (nonatomic, weak) UIButton *selectedBtn;  ///< 当前选中的button
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headViewCons;  ///< 头部视图高度
-@property (weak, nonatomic) IBOutlet UIImageView *cardView; ///< 明信片控件
+
 
 @end
 

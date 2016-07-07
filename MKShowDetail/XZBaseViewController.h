@@ -11,7 +11,7 @@
 @interface XZBaseViewController : UIViewController
 /// 头部视图
 @property (weak, nonatomic,nullable) IBOutlet UIView *headerView;
-
+@property (weak, nonatomic,nullable) IBOutlet UIImageView *cardView; ///< 背景图片
 /**
  *  设置显示效果
  *

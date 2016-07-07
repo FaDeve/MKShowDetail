@@ -17,9 +17,9 @@
 		5AC9D95E1C8D75A500B6AFCA /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D95D1C8D75A500B6AFCA /* OneViewController.m */; };
 		5AC9D9611C8D75AF00B6AFCA /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D9601C8D75AF00B6AFCA /* TwoViewController.m */; };
 		5AC9D9641C8D75BD00B6AFCA /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC9D9631C8D75BD00B6AFCA /* ThreeViewController.m */; };
-		5AC9D9661C8D7B9D00B6AFCA /* bgImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D9651C8D7B9D00B6AFCA /* bgImage.gif */; };
 		5AC9D96C1C8D849500B6AFCA /* lol.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D96B1C8D849500B6AFCA /* lol.jpg */; };
 		5AC9D96E1C8D849B00B6AFCA /* timo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AC9D96D1C8D849B00B6AFCA /* timo.jpg */; };
+		B207C8471D2E1125008681E6 /* bgImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = B207C8461D2E1125008681E6 /* bgImage.gif */; };
 		B246D3571D2CCCB4005A96A8 /* XZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B246D3511D2CCCB4005A96A8 /* XZBaseViewController.m */; };
 		B246D3581D2CCCB4005A96A8 /* XZBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B246D3521D2CCCB4005A96A8 /* XZBaseViewController.xib */; };
 		B246D3591D2CCCB4005A96A8 /* XZCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B246D3541D2CCCB4005A96A8 /* XZCustomViewController.m */; };
@@ -45,10 +45,10 @@
 		5AC9D9601C8D75AF00B6AFCA /* TwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
 		5AC9D9621C8D75BD00B6AFCA /* ThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeViewController.h; sourceTree = "<group>"; };
 		5AC9D9631C8D75BD00B6AFCA /* ThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeViewController.m; sourceTree = "<group>"; };
-		5AC9D9651C8D7B9D00B6AFCA /* bgImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bgImage.gif; sourceTree = "<group>"; };
 		5AC9D96B1C8D849500B6AFCA /* lol.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lol.jpg; sourceTree = "<group>"; };
 		5AC9D96D1C8D849B00B6AFCA /* timo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timo.jpg; sourceTree = "<group>"; };
 		B207C8451D2E0F6C008681E6 /* MKShowDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKShowDetail.h; sourceTree = "<group>"; };
+		B207C8461D2E1125008681E6 /* bgImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bgImage.gif; sourceTree = "<group>"; };
 		B246D3501D2CCCB4005A96A8 /* XZBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZBaseViewController.h; sourceTree = "<group>"; };
 		B246D3511D2CCCB4005A96A8 /* XZBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZBaseViewController.m; sourceTree = "<group>"; };
 		B246D3521D2CCCB4005A96A8 /* XZBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZBaseViewController.xib; sourceTree = "<group>"; };
@@ -106,7 +106,6 @@
 				5AC9D9071C8D23E000B6AFCA /* LaunchScreen.storyboard */,
 				5AC9D90A1C8D23E000B6AFCA /* Info.plist */,
 				5AC9D96B1C8D849500B6AFCA /* lol.jpg */,
-				5AC9D9651C8D7B9D00B6AFCA /* bgImage.gif */,
 				5AC9D96D1C8D849B00B6AFCA /* timo.jpg */,
 				5AC9D8F91C8D23E000B6AFCA /* Supporting Files */,
 			);
@@ -124,6 +123,7 @@
 		B246D34F1D2CCCB4005A96A8 /* MKShowDetail */ = {
 			isa = PBXGroup;
 			children = (
+				B207C8461D2E1125008681E6 /* bgImage.gif */,
 				B246D3501D2CCCB4005A96A8 /* XZBaseViewController.h */,
 				B246D3511D2CCCB4005A96A8 /* XZBaseViewController.m */,
 				B246D3521D2CCCB4005A96A8 /* XZBaseViewController.xib */,
@@ -194,7 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AC9D9661C8D7B9D00B6AFCA /* bgImage.gif in Resources */,
+				B207C8471D2E1125008681E6 /* bgImage.gif in Resources */,
 				5AC9D9091C8D23E000B6AFCA /* LaunchScreen.storyboard in Resources */,
 				5AC9D96E1C8D849B00B6AFCA /* timo.jpg in Resources */,
 				5AC9D96C1C8D849500B6AFCA /* lol.jpg in Resources */,

@@ -30,7 +30,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rph-qq-qgC" userLabel="头部视图">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lol.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hWu-VW-xc9">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgImage.gif" translatesAutoresizingMaskIntoConstraints="NO" id="hWu-VW-xc9">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                         </imageView>
                     </subviews>
@@ -72,6 +72,6 @@
         </view>
     </objects>
     <resources>
-        <image name="lol.jpg" width="500" height="391"/>
+        <image name="bgImage.gif" width="1024" height="427"/>
     </resources>
 </document>

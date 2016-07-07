@@ -48,6 +48,7 @@
 		5AC9D9651C8D7B9D00B6AFCA /* bgImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bgImage.gif; sourceTree = "<group>"; };
 		5AC9D96B1C8D849500B6AFCA /* lol.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lol.jpg; sourceTree = "<group>"; };
 		5AC9D96D1C8D849B00B6AFCA /* timo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timo.jpg; sourceTree = "<group>"; };
+		B207C8451D2E0F6C008681E6 /* MKShowDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKShowDetail.h; sourceTree = "<group>"; };
 		B246D3501D2CCCB4005A96A8 /* XZBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZBaseViewController.h; sourceTree = "<group>"; };
 		B246D3511D2CCCB4005A96A8 /* XZBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZBaseViewController.m; sourceTree = "<group>"; };
 		B246D3521D2CCCB4005A96A8 /* XZBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZBaseViewController.xib; sourceTree = "<group>"; };
@@ -130,6 +131,7 @@
 				B246D3541D2CCCB4005A96A8 /* XZCustomViewController.m */,
 				B246D3551D2CCCB4005A96A8 /* XZTableView.h */,
 				B246D3561D2CCCB4005A96A8 /* XZTableView.m */,
+				B207C8451D2E0F6C008681E6 /* MKShowDetail.h */,
 			);
 			name = MKShowDetail;
 			path = ../../MKShowDetail;

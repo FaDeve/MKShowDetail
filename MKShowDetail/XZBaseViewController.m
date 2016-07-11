@@ -45,6 +45,7 @@ static NSString *const keyPath = @"center";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _headViewCons.constant = kHeadViewH;
     // 不自动添加额外滚动区域
     self.automaticallyAdjustsScrollViewInsets = NO;
     _contentView.pagingEnabled = YES;

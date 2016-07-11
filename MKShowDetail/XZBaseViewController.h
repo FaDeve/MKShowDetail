@@ -12,6 +12,7 @@
 /// 头部视图
 @property (weak, nonatomic,nullable) IBOutlet UIView *headerView;
 @property (weak, nonatomic,nullable) IBOutlet UIImageView *cardView; ///< 背景图片
+@property (weak, nonatomic,nullable) IBOutlet UIView *titleBar;  ///< 选择栏
 /**
  *  设置显示效果
  *

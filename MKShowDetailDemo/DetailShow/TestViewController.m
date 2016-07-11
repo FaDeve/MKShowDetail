@@ -33,6 +33,8 @@
     // 设置导航条标题
     self.title = @"商户详情";
     self.view.backgroundColor = [UIColor whiteColor];
+    self.titleBar.backgroundColor = [UIColor grayColor];
+    
     
     __weak typeof(self) weakSelf = self;
     

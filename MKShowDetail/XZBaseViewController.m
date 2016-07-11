@@ -14,7 +14,7 @@ static NSString *const keyPath = @"center";
 @interface XZBaseViewController ()<UIScrollViewDelegate>
 
 @property (nonatomic, weak) UILabel *titleLabel;    ///< 标题内容
-@property (weak, nonatomic) IBOutlet UIView *titleBar;  ///< 选择栏
+
 @property (weak, nonatomic) IBOutlet UIScrollView *contentView; ///盛放滚动控制器的视图
 @property (nonatomic, weak) UIButton *selectedBtn;  ///< 当前选中的button
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headViewCons;  ///< 头部视图高度

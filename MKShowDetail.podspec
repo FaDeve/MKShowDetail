@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                 = "MKShowDetail"
-  s.version              = "0.0.3"
+  s.version              = "0.0.4"
   s.summary              = "Show shopdetail,like ele,meituan etc"
   s.homepage             = "https://github.com/Mekor/MKShowDetail"
   s.license              = { :type => "MIT", :file => "LICENSE" }
@@ -10,7 +10,10 @@ Pod::Spec.new do |s|
   s.platform             = :ios, "7.0"
   s.source               = { :git => "https://github.com/Mekor/MKShowDetail.git", :tag => s.version }
   s.source_files          = "MKShowDetail/*.{h,m}"
-  s.resources          = "MKShowDetail/*.{xib,jpg,png}"
+  s.resource_bundles = {
+     'MyPodBundle' => ['MKShowDetail/**/*.xib']
+ }
+  s.resources          = "MKShowDetail/*.{jpg,png,gif}"
   s.requires_arc         = true
   s.frameworks = 'UIKit'                  #所需的framework，多个用逗号隔开
 

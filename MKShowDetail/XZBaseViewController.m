@@ -26,13 +26,7 @@ static NSString *const keyPath = @"center";
 
 #pragma mark - lifecycle
 -(void)dealloc {
-    @try {
-        [[NSNotificationCenter defaultCenter] removeObserver:self.titleBar forKeyPath:keyPath];
-    } @catch (NSException *exception) {
-        NSLog(@"exception:%@",exception);
-    } @finally {
-        NSLog(@"finally");
-    }
+    [self.titleBar removeObserver:self forKeyPath:keyPath context:NULL];
 }
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
